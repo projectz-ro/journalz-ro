@@ -19,6 +19,26 @@ Use it for journaling, note-taking or whatever you like
 
 ## Installation
 
+Use git to clone the repo
+
+```bash 
+cd journalz-ro
+go build -o journalz-ro
+```
+or if you don't like typing
+
+```bash
+cd journalz-ro
+go build -o jzro
+```
+then I recommend moving it into your $PATH somewhere
+
+```bash
+sudo mv journalz-ro /usr/local/bin/
+```
+
+What you name the build will be the name you use to run the program.
+
 ## Usage
 
 ### New Entry
