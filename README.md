@@ -86,17 +86,21 @@ This, I think, will make finding older notes easier and more rewarding. It also 
 ### Find Entries by Tag
 
 Find entries associated with a specific tag:
+
 ```bash
-journalz-ro find <tag>
+journalz-ro find [tags]
 ```
+
 Find entries then refine your search, start a new search, delete entries or add them to a merge list.
 
-### Merge Entries
+### Merge Entries (Interactive, after a find command)
 Merge entries that share a specific tag into a Volume. Merge commands happen from within the find command. This requires a name for the volume:
+
 ```bash
-m <name>
+m [name]
 ```
-The volume will be saved as `<name>` in the VOLUME_DIR directory.
+
+The volume will be saved as `[name]` in the VOLUME_DIR directory.
 
 Naming volumes makes sense to me as they are more curated. You're gathering your thoughts about one or more related topics, into one easy reference and maybe even for cleaning up into a finished work.
 
