@@ -13,11 +13,50 @@ Use it for journaling, note-taking or whatever you like
 ## Dependencies
 
 - **Neovim** 
-   *MUST BE BOUND TO `nvim` COMMAND*
-- **Go(golang)**
-   *Not version specific to my knowledge, but built on 1.23.1*
+   *MUST BE BOUND TO `nvim` COMMAND*...for now
+   _(this is default)_
+- **Golang**
+   *Not version specific to my knowledge*
 
 ## Installation
+
+### Easiest Way (Recommended)
+
+```bash
+go install github.com/projectz-ro/journalz-ro@latest
+```
+you should be able to run 
+
+```bash
+journalz-ro
+```
+
+if not, it's probably because the go path is not in your path.
+GOPATH is a variable that kind of acts as a root for go and it's
+operations. The same is true for $PATH on your linux machine. It
+automatically knows where things are in there. That's why you can 
+call things from there by name and not absolute/relative path.
+
+In your ~/.bashrc or ~/.zshrc or whatever shell you use, you need to 
+add the GOPATH to your PATH variable. Should be a long list near the bottom
+
+```
+export PATH=/home/<your-username>/.local/bin:/usr/local/bin #etc, etc
+```
+
+You can see that the paths are separated by ':' characters. So at the end of 
+this long string of paths add
+
+```
+:$(go env GOPATH)/bin
+```
+
+Now you should be able to use it. You don't have to assign that path again,
+unless you switch shells often. You just need to run the install command again
+when you want to update to the latest.
+
+
+### From Source (Not difficult, just extra parts)
 
 Use git to clone the repo
 
@@ -25,19 +64,12 @@ Use git to clone the repo
 cd journalz-ro
 go build -o journalz-ro
 ```
-or if you don't like typing
 
-```bash
-cd journalz-ro
-go build -o jzro
-```
 then I recommend moving it into your $PATH somewhere
 
 ```bash
 sudo mv journalz-ro /usr/local/bin/
 ```
-
-What you name the build will be the name you use to run the program.
 
 ## Usage
 
@@ -87,6 +119,7 @@ nvim ~/.config/journalz-ro/config.json
 1. Templates for entries and volumes, to customize how they are formatted
 2. Greater search and filtering functionality, like date ranges
 3. Color Themes
+4. Tag Display/Editing
 
 ## Thanks
 
