@@ -45,9 +45,11 @@ What you name the build will be the name you use to run the program.
 
 Create a new journal entry:
 ```bash
-journalz-ro new
+journalz-ro new [tags]
 ```
-This command generates a new entry based on the template defined in `entry_template` and opens it in a new neovim instance.
+This command generates a new entry with the tags provided and opens it in neovim. You do not name notes. You tag them by subject.
+
+This, I think, will make finding older notes easier and more rewarding. It also takes away that "what do I call this...." problem and let's you get straight to putting your thoughts down. 
 
 ### Find Entries by Tag
 
@@ -58,11 +60,13 @@ journalz-ro find <tag>
 Find entries then refine your search, start a new search, delete entries or add them to a merge list.
 
 ### Merge Entries
-Merge entries that share a specific tag. Merge commands happen from within the find command. This requires a name for the merged entry:
+Merge entries that share a specific tag into a Volume. Merge commands happen from within the find command. This requires a name for the volume:
 ```bash
 m <name>
 ```
-The merged entry will be saved as `<name>` in the MERGE_DIR directory.
+The volume will be saved as `<name>` in the VOLUME_DIR directory.
+
+Naming volumes makes sense to me as they are more curated. You're gathering your thoughts about one or more related topics, into one easy reference and maybe even for cleaning up into a finished work.
 
 ## Configuration
 
@@ -75,17 +79,14 @@ nvim ~/.config/journalz-ro/config.json
 ```json
         "SAVE_DIR":        "~/Documents/",
 		"VOLUME_DIR":      "~/Documents/Volumes/",
-		"ENTRY_TEMPLATE":  "~/.config/journalz-ro/entry_template.md",
-		"VOLUME_TEMPLATE": "~/.config/journalz-ro/volume_template.md",
 		"INSERT_ON_NEW":   true,
-		"START_POS":       5,
-		"SEPARATE_WIN":    true,
-		"TERMINAL_APP":    "alacritty",
+		"START_POS":       8,
 
 ```
 ## Planned Features
-1. Templates for entries and volumes
-    - Customize how entries and volumes are formatted
+1. Templates for entries and volumes, to customize how they are formatted
+2. Greater search and filtering functionality, like date ranges
+3. Color Themes
 
 ## Thanks
 
