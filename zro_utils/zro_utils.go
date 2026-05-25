@@ -36,7 +36,7 @@ func CountFiles(folder string, regexTerm string) (int, error) {
 	return count, nil
 }
 
-// TODO double check compatibility with UTF-8 chars
+// TODO: double check compatibility with UTF-8 chars
 
 // Write lines to a file(create it if necessary) from an array of strings
 func WriteLines(filePath string, lines []string) error {

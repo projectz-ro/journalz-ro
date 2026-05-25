@@ -154,7 +154,7 @@ func Render(desiredMode DisplayMode, entriesList []db.Entry, searchTags []string
 		// E.g. a 1 4 12
 		fmt.Println(Magenta + "[A]dd entry to volume list: " + Reset + "a [number]...")
 		// E.g. w
-		//TODO uncomment and make this work
+		//TODO: uncomment and make this work
 		// fmt.Println(Magenta + "[W]hole list to volume list: " + Reset + "w")
 		// E.g. d 1 4 12
 		fmt.Println(Magenta + "[D]elete entry permanently: " + Reset + "d [number]...")

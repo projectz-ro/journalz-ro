@@ -58,7 +58,6 @@ func init() {
 }
 
 func newSearch() error {
-
 	err := initialSearch()
 	if err != nil {
 		return fmt.Errorf("failed to search entries: %v", err)
@@ -70,6 +69,7 @@ func newSearch() error {
 	}
 	return nil
 }
+
 func initialSearch() error {
 	err := db.USERDB.DB.Preload("Tags").Where("EXISTS (?)", db.USERDB.DB.Table("entry_tags").
 		Select("entry_id").
@@ -81,6 +81,7 @@ func initialSearch() error {
 	}
 	return nil
 }
+
 func refineSearch() error {
 	var results []db.Entry
 
@@ -119,7 +120,6 @@ func refineSearch() error {
 	}
 	if len(results) == 0 {
 		fmt.Println("No results found")
-
 	}
 	if ascending && descending {
 		return fmt.Errorf("cannot sort by both ascending and descending")
@@ -168,7 +168,6 @@ func promptLoop() error {
 
 		// Secondary Commands
 		if ui.CurrentDisplay == ui.SearchDisplay {
-
 			switch strings.ToLower(newCmd) {
 			case "r":
 				if len(searchResults) > 4 {
@@ -413,8 +412,7 @@ func createVolume(newArgs []string) (string, error) {
 		"",
 		"",
 	}
-	// TODO warn for long running process if they add a crazy number of entries
-	// perhaps limit the number of entries later
+	// TODO: warn for long running process if they add a crazy number of entries perhaps limit the number of entries later
 
 	for _, file := range mergeList {
 		tempLines,
@@ -437,6 +435,7 @@ func createVolume(newArgs []string) (string, error) {
 	return filepath,
 		nil
 }
+
 func getVolTags() []string {
 	tagSet := make(map[string]struct{})
 
@@ -463,6 +462,4 @@ func getVolOg() []db.Entry {
 		}
 	}
 	return temp
-
 }
-

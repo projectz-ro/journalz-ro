@@ -7,7 +7,7 @@ import (
 	"log"
 )
 
-// TODO Random reminder function to show a random entry to remind you of it
+// TODO: Random reminder function to show a random entry to remind you of it
 func main() {
 	config.LoadConfig()
 
